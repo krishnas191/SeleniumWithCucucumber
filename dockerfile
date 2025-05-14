@@ -7,4 +7,4 @@ FROM eclipse-temurin:17.0.6_10-jdk
 WORKDIR /app
 COPY --from=build /app/target/cucumber.jar /app/
 EXPOSE 8080
-CMD ["java", "-jar","cucumber.jar"]
+CMD ["java", "-jar","/cucumber.jar"]
