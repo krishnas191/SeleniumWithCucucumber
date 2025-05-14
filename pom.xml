@@ -53,6 +53,7 @@
             </plugin>
 
         </plugins>
+	    <finalName>selenium-cucumber</finalName>
     </build>
 
     <dependencies>
