@@ -5,6 +5,6 @@ RUN mvn clean install
 
 FROM eclipse-temurin:17.0.6_10-jdk
 WORKDIR /app
-COPY --from=build /app/target/selenium-cucumber.jar /app/
+COPY --from=build /app/target/my-selenium.jar /app/
 EXPOSE 8080
-CMD ["java", "-jar","/selenium-cucumber.jar"]
+CMD ["java", "-jar","/my-selenium.jar"]
