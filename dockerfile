@@ -1,10 +1,10 @@
-FROM maven:3.9.0-eclipse-temurin-17 as build
-WORKDIR /app
-COPY . .
+FROM maven:3.9.6-eclipse-temurin-21
+
+VOLUME /root/.m2
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
 RUN mvn clean install
 
-FROM eclipse-temurin:17.0.6_10-jdk
-WORKDIR /app
-COPY --from=build /app/target/my-selenium.jar /app/
-EXPOSE 8080
-CMD ["java", "-jar","/my-selenium.jar"]
+CMD ["mvn", "test"]
